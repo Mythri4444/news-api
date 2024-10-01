@@ -1,4 +1,4 @@
-const url = "./news.json";
+const url = "new.json";
 
 window.addEventListener('load', () => fetchNews());
 
