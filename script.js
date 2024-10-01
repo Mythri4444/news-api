@@ -1,4 +1,4 @@
-const url = "news.json";
+const url = "./news.json";
 
 window.addEventListener('load', () => fetchNews());
 
@@ -6,7 +6,7 @@ async function fetchNews() {
     try {
         const res = await fetch(url);
         if (!res.ok) {
-            throw new Error(HTTP error! status: ${res.status});
+            throw new Error(`HTTP error! status: ${res.status}`);
         }
         const data = await res.json();
         console.log(data);
@@ -48,7 +48,7 @@ function fillDataInCard(cardClone, article) {
         timeZone: "Asia/Jakarta"
     });
 
-    newsSource.innerHTML = ${article.source.name} - ${date};
+    newsSource.innerHTML = `${article.source.name} - ${date}`;
 
     cardClone.firstElementChild.addEventListener("click", () => {
         window.open(article.url, "_blank");
